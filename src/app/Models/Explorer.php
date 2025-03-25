@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class explorer extends Model
+class Explorer extends Model
 {
     use HasFactory;
 
@@ -20,6 +20,6 @@ class explorer extends Model
 
     public function items()
     {
-        return $this->hasMany(item::class);
+        return $this->hasMany(Item::class);
     }
 }

@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 
-class itemController extends Controller
+class ItemController extends Controller
 {
 
-    public function store(Request $request)
+    public function item(Request $request)
     {
         $request->validate([
-            'nome' => 'required' | string,
-            'valor' => 'required' | float,
-            'latitude' => 'required' | string,
-            'longitude' => 'required' | string,
-            'explorer_id' => 'required' | integer,
+            'nome' => 'required|string',
+            'valor' => 'required|numeric',
+            'latitude' => 'required|string',
+            'longitude' => 'required| string',
+            'explorer_id' => 'required|integer',
         ]);
 
         $item = Item::create($request->all());

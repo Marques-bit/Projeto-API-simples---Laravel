@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 
-class tradeController extends Controller
+class TradeController extends Controller
 {
     public function store(Request $request)
     {
         $request->validate([
-            'nome' => 'required' | string,
-            'valor' => 'required' | float,
-            'latitude' => 'required' | string,
-            'longitude' => 'required' | string,
-            'explorer_id' => 'required' | integer,
+            'explorer_id1' => 'required|integer',
+            'item1' => 'required|integer',
+            'explorer_id2' => 'required|integer',
+            'item2' => 'required|integer',
         ]);
 
 
