@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ExplorerController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\TradeController;
+use App\Models\History;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/trade', [tradeController::class, 'trade']);
 Route::get('/explorers', [ExplorerController::class, 'index']);
 Route::post('/explorers', [ExplorerController::class, 'store']);
 Route::put('/explorers/{explorer}', [ExplorerController::class, 'updateLocation']);
 Route::post('/items', [ItemController::class, 'item']);
-Route::post('/trade',[TradeController::class, 'trade']);
+Route::post('/trade',[TradeController::class, 'store']);
+Route::get('/history', [HistoryController::class, 'history']);

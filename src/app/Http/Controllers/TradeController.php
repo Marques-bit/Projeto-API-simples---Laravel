@@ -20,7 +20,7 @@ class TradeController extends Controller
         $item1 = Item::find($request->item1);
         $item2 = Item::find($request->item2);
 
-        if ($item1->valor != $item2->valor ){
+        if ($item1->price != $item2->price){
             return response()->json(["error" => "A troca nao pode ser realizada, pois os itens tem valores diferentes!"], 400);
         }
 

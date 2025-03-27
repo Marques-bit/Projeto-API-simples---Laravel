@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Explorer;
+use App\Models\History;
 use Illuminate\Http\Request;
 
 class ExplorerController extends Controller
@@ -22,7 +23,11 @@ class ExplorerController extends Controller
         ]);
 
         $explorer = Explorer::create($request->all());
-
+        History::create([
+            'explorer_id' => $explorer->id,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+        ]);
         return response()->json($explorer);
     }
 

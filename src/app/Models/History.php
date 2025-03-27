@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class History extends Model
 {
     use HasFactory;
 
-    protected $table = 'items';
+    protected $table = 'history';
 
     protected $fillable = [
-        'nome',
-        'price',
+        'explorer_id',
         'latitude',
         'longitude',
-        'explorer_id',
     ];
 
     public function explorer()

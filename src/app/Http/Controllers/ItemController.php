@@ -12,9 +12,9 @@ class ItemController extends Controller
     {
         $request->validate([
             'nome' => 'required|string',
-            'valor' => 'required|numeric',
+            'price' => 'required|decimal:2',
             'latitude' => 'required|string',
-            'longitude' => 'required| string',
+            'longitude' => 'required|string',
             'explorer_id' => 'required|integer',
         ]);
 
